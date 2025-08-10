@@ -1,0 +1,95 @@
+/* Minimal responsive styles for scrolling slides */
+:root {
+  --slide-gap: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; width: 100%; overflow-x: hidden; }
+body { scroll-behavior: smooth; scroll-snap-type: y mandatory; overscroll-behavior-y: none; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #f9f9f9;
+  color: #111111;
+}
+
+.slides {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.slides img {
+  display: block;
+  width: 100%;
+  height: 100vh;  /* fallback */
+  height: 100svh; /* ensures full image fits when browser UI is visible on mobile */
+  object-fit: contain;
+  object-position: center center;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Hotspot overlay for slide 20 (clickable Figma link)
+   Coordinates are set in percentages so they scale with the image.
+   Adjust if needed to better match the link area on the PNG. */
+.slide { position: relative; }
+.slide > img { display: block; }
+.hotspot { position: absolute; display: block; cursor: pointer; }
+
+/* Estimated bounding box for the "View the prototype on Figma" link area */
+.slide--20 .hotspot--figma {
+  /* These percentages are relative to the image box (object-fit: contain) */
+  left: 13.5%;   /* x-position from left */
+  top: 74.5%;    /* y-position from top */
+  width: 14%;    /* width of hotspot */
+  height: 6%;    /* height of hotspot */
+}
+
+/* Improve tap target on small screens */
+@media (max-width: 600px) {
+  .slide--20 .hotspot--figma { height: 7.5%; }
+}
+
+/* Hotspot for slide 15 "View the usability study" link */
+.slide--15 .hotspot--usability {
+  left: 13.5%;
+  top: 19.5%;
+  width: 23%;
+  height: 5.5%;
+}
+@media (max-width: 600px) {
+  .slide--15 .hotspot--usability { height: 7%; }
+}
+
+/* Hotspot for slide 14 "prototype on figma" link */
+.slide--14 .hotspot--proto-figma {
+  left: 79.2%;
+  top: 85.4%;
+  width: 16.5%;
+  height: 7.2%;
+}
+@media (max-width: 600px) {
+  .slide--14 .hotspot--proto-figma { height: 6.5%; }
+}
+
+/* Hotspot for slide 03 "Amazon.com" link */
+.slide--03 .hotspot--amazon {
+  left: 25.6%;
+  top: 61.6%;
+  width: 16.8%;
+  height: 3.4%;
+}
+@media (max-width: 600px) {
+  .slide--03 .hotspot--amazon { height: 5%; }
+}
+
+/* Reduce gaps on small screens */
+@media (max-width: 480px) {
+  :root { --slide-gap: 16px; }
+}
+
+

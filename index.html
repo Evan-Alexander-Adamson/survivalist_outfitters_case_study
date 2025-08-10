@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Survivalist Mobile Case Study</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="slides" aria-label="Survivalist Mobile Case Study Slides">
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_01.png" alt="Case Study Slide 01" loading="eager" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_02.png" alt="Case Study Slide 02" loading="lazy" decoding="async" />
+      <div class="slide slide--03">
+        <img src="Survivalist_Mobile_Case_Study_4k_Page_03.png" alt="Case Study Slide 03" loading="lazy" decoding="async" />
+        <a
+          class="hotspot hotspot--amazon"
+          href="https://www.amazon.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Amazon.com (opens in a new tab)"
+          title="Amazon.com"
+        ></a>
+      </div>
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_04.png" alt="Case Study Slide 04" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_05.png" alt="Case Study Slide 05" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_06.png" alt="Case Study Slide 06" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_07.png" alt="Case Study Slide 07" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_09.png" alt="Case Study Slide 09" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_10.png" alt="Case Study Slide 10" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_11.png" alt="Case Study Slide 11" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_12.png" alt="Case Study Slide 12" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_13.png" alt="Case Study Slide 13" loading="lazy" decoding="async" />
+      <div class="slide slide--14">
+        <img src="Survivalist_Mobile_Case_Study_4k_Page_14.png" alt="Case Study Slide 14" loading="lazy" decoding="async" />
+        <a
+          class="hotspot hotspot--proto-figma"
+          href="https://www.figma.com/proto/EOSlL1XGaXw1hCfh8Gu72A?node-id=0-1&t=D7Xb38J59doSaqX7-6"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the low-fidelity prototype on Figma (opens in a new tab)"
+          title="Open the prototype on Figma"
+        ></a>
+      </div>
+      <div class="slide slide--15">
+        <img src="Survivalist_Mobile_Case_Study_4k_Page_15.png" alt="Case Study Slide 15" loading="lazy" decoding="async" />
+        <a
+          class="hotspot hotspot--usability"
+          href="https://drive.google.com/file/d/1saUR6Fh5DMC4HHWnEQ-Bu5uy_fe2jCil/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View the usability study (opens in a new tab)"
+          title="View the usability study"
+        ></a>
+      </div>
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_16.png" alt="Case Study Slide 16" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_17.png" alt="Case Study Slide 17" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_18.png" alt="Case Study Slide 18" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_19.png" alt="Case Study Slide 19" loading="lazy" decoding="async" />
+      <div class="slide slide--20">
+        <img src="Survivalist_Mobile_Case_Study_4k_Page_20.png" alt="Case Study Slide 20" loading="lazy" decoding="async" />
+        <a
+          class="hotspot hotspot--figma"
+          href="https://www.figma.com/proto/uKiWgpA5wKUytHrZGPbwar?node-id=0-1&t=J7xkRV5uyRcESs8i-6"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View the prototype on Figma (opens in a new tab)"
+          title="View the prototype on Figma"
+        ></a>
+      </div>
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_21.png" alt="Case Study Slide 21" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_22.png" alt="Case Study Slide 22" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_23.png" alt="Case Study Slide 23" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_24.png" alt="Case Study Slide 24" loading="lazy" decoding="async" />
+      <img src="Survivalist_Mobile_Case_Study_4k_Page_25.png" alt="Case Study Slide 25" loading="lazy" decoding="async" />
+    </main>
+    <script>
+      (function () {
+        const container = document.scrollingElement || document.documentElement;
+        const slidesRoot = document.querySelector('.slides');
+        if (!slidesRoot) return;
+        let currentIndex = 0;
+
+        function clamp(value, min, max) {
+          return Math.min(Math.max(value, min), max);
+        }
+
+        function getViewportHeight() {
+          return window.innerHeight || document.documentElement.clientHeight || 0;
+        }
+
+        function updateCurrentIndex() {
+          const vh = getViewportHeight();
+          if (vh <= 0) return;
+          currentIndex = Math.round(container.scrollTop / vh);
+        }
+
+        function goTo(index) {
+          const maxIndex = slidesRoot.children.length - 1;
+          currentIndex = clamp(index, 0, maxIndex);
+          const offset = currentIndex * getViewportHeight();
+          container.scrollTo({ top: offset, behavior: 'smooth' });
+        }
+
+        // Keep index in sync while user scrolls; debounce to avoid thrashing
+        let scrollTimer = null;
+        document.addEventListener('scroll', () => {
+          if (scrollTimer) clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(updateCurrentIndex, 120);
+        }, { passive: true });
+
+        // Keyboard navigation for a slideshow feel
+        window.addEventListener('keydown', (e) => {
+          const key = e.key;
+          const nextKeys = ['ArrowDown', 'PageDown'];
+          const prevKeys = ['ArrowUp', 'PageUp'];
+          if (key === ' ' && !e.shiftKey) { e.preventDefault(); goTo(currentIndex + 1); return; }
+          if (key === ' ' && e.shiftKey) { e.preventDefault(); goTo(currentIndex - 1); return; }
+          if (nextKeys.includes(key)) { e.preventDefault(); goTo(currentIndex + 1); return; }
+          if (prevKeys.includes(key)) { e.preventDefault(); goTo(currentIndex - 1); return; }
+          if (key === 'Home') { e.preventDefault(); goTo(0); return; }
+          if (key === 'End') { e.preventDefault(); goTo(slidesRoot.children.length - 1); return; }
+        });
+
+        // Re-align on resize to keep slide perfectly centered in the viewport
+        window.addEventListener('resize', () => {
+          goTo(currentIndex);
+        });
+      })();
+    </script>
+  </body>
+  </html>
+
+
