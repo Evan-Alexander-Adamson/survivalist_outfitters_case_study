@@ -87,6 +87,33 @@ body {
   .slide--03 .hotspot--amazon { height: 5%; }
 }
 
+/* Hotspot for slide 25 "here" link to portfolio */
+.slide--25 .hotspot--portfolio {
+  left: 640px;  /* desktop fallback absolute, overridden by % for responsiveness */
+  top: 558px;
+  width: 50px;
+  height: 28px;
+  left: 46.6%;
+  top: 55.6%;
+  width: 4.2%;
+  height: 3.0%;
+}
+@media (max-width: 600px) {
+  .slide--25 .hotspot--portfolio { height: 5%; }
+}
+
+/* Hotspot for slide 25 LinkedIn URL */
+.slide--25 .hotspot--linkedin {
+  /* initial estimate; tweak as needed */
+  left: 20.2%;
+  top: 66.7%;
+  width: 40.5%;
+  height: 3.6%;
+}
+@media (max-width: 600px) {
+  .slide--25 .hotspot--linkedin { height: 5%; }
+}
+
 /* Reduce gaps on small screens */
 @media (max-width: 480px) {
   :root { --slide-gap: 16px; }
